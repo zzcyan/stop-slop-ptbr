@@ -1,0 +1,30 @@
+name: Publicar ZIP da skill
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Montar o ZIP
+        run: |
+          mkdir -p dist/stop-slop-ptbr
+          cp -r SKILL.md referencias LICENSE dist/stop-slop-ptbr/
+          cd dist
+          zip -r stop-slop-ptbr.zip stop-slop-ptbr
+          unzip -l stop-slop-ptbr.zip
+
+      - name: Criar a release com o ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/stop-slop-ptbr.zip \
+            --title "$GITHUB_REF_NAME" \
+            --notes "ZIP para enviar em Customize > Skills no claude.ai ou no Claude Desktop. Para o Claude Code, veja a instalação no README."

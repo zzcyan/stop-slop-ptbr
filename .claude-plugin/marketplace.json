@@ -1,0 +1,25 @@
+{
+  "name": "stop-slop-ptbr",
+  "description": "Skill que tira de textos em português as marcas de escrita de IA.",
+  "owner": {
+    "name": "Carlos Yan",
+    "url": "https://github.com/zzcyan"
+  },
+  "plugins": [
+    {
+      "name": "stop-slop-ptbr",
+      "displayName": "Stop Slop (português do Brasil)",
+      "source": "./",
+      "description": "Tira de textos em português as marcas de escrita de IA: aberturas que enrolam, contraste \"não é X, é Y\", jargão, advérbios em -mente, travessão, voz passiva e gerúndio pendurado. Adaptação de hardikpandya/stop-slop.",
+      "author": {
+        "name": "Carlos Yan",
+        "url": "https://github.com/zzcyan"
+      },
+      "homepage": "https://github.com/zzcyan/stop-slop-ptbr",
+      "repository": "https://github.com/zzcyan/stop-slop-ptbr",
+      "license": "MIT",
+      "keywords": ["escrita", "revisão", "português", "pt-br", "ai-writing"],
+      "category": "writing"
+    }
+  ]
+}
